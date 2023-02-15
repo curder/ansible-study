@@ -1,1 +1,1 @@
-# Ansible study
+<!--@include: ./README.md-->
