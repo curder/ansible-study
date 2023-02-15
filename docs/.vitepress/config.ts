@@ -34,14 +34,14 @@ export default defineConfig({
         ],
         nav: nav(),
         sidebar: {
-            //
+            "xxx": sidebarInstall(),
         }
     }
 });
 
 function nav() {
     return [
-       //
+        {text: '安装', link: '/guide/install', activeMatch: '/guide/install'},
     ];
 }
 
