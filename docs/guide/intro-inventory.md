@@ -237,8 +237,33 @@ SSH连接的变量也可以作为宿主变量使用：
 
 ```ini
 [web]
-localhost ansible_connection=local ansible_user=curder
+localhost ansible_connection=ssh ansible_host=localhost ansible_port=22 ansible_user=curder ansible_ssh_private_key_file=~/.ssh/id_rsa
 ```
+
+[更多 ansible 连接参数配置查看这里](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html?q=ansible_connection&check_keywords=yes&area=default#connecting-to-hosts-behavioral-inventory-parameters)
+
+#### 主机别名
+
+可以使用主机变量在清单中定义别名，比如下面的示例将主机定义一个别名 `jumper`
+
+::: code-group
+```ini
+jumper ansible_port=22 ansible_host=127.0.0.1
+```
+
+```yaml
+ungrouped:
+  hosts:
+    jumper:
+      ansible_port: 22
+      ansible_host: 127.0.0.1
+```
+:::
+
+
+
+
+
 
 ### 组变量
 
