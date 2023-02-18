@@ -10,11 +10,7 @@ export default defineConfig({
         ['link', {rel: 'icon', href: '/ansible-study/images/favicon.ico'}],
     ],
     themeConfig: {
-        logo: {
-            light: "/images/light-logo.svg",
-            dark: "/images/dark-logo.svg",
-            alt: "Ansible Logo",
-        },
+        logo: {light: "/images/light-logo.svg", dark: "/images/dark-logo.svg", alt: "Ansible Logo",},
         siteTitle: "Ansible学习",
         outline: {
             label: "章节导航",
@@ -34,25 +30,26 @@ export default defineConfig({
         ],
         nav: nav(),
         sidebar: {
-            "xxx": sidebarInstall(),
+            "guide/": sidebarInstall(),
         }
     }
 });
 
 function nav() {
     return [
-        {text: '安装', link: '/guide/install', activeMatch: '/guide/install'},
+        {text: '基础', link: '/guide/install', activeMatch: '/guide/*'},
     ];
 }
 
 function sidebarInstall() {
     return [
         {
-            text: "安装",
+            text: "基础",
             // collapsible: true,
             // collapsed: false,
             items: [
                 {text: "安装", link: "/guide/install"},
+                {text: "主机清单", link: "/guide/intro-inventory.md"},
             ]
         },
     ];
