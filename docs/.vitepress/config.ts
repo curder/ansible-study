@@ -49,7 +49,8 @@ function sidebarInstall() {
             // collapsed: false,
             items: [
                 {text: "安装", link: "/guide/install"},
-                {text: "主机清单", link: "/guide/intro-inventory.md"},
+                {text: "主机清单", link: "/guide/intro-inventory"},
+                {text: "临时命令模式", link: "/guide/ad-hoc"},
             ]
         },
     ];
