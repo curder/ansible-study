@@ -199,7 +199,7 @@ databases:
 可以通过从命令行提供多个清单参数或通过配置文件来同时定位多个主机清单源（目录、动态清单脚本或清单插件支持的文件），比如对生成和测试环境同时执行某项命令。
 
 ```bash
-ansible all -i src/stage.yml -i src/prod.yml -m ping
+ansible all -m ping
 ```
 
 > 这样的做法能将不同环境的主机清单记录到不同的配置文件中
@@ -298,4 +298,42 @@ web:
 组变量是一次将变量应用于多个主机的便捷方式。然而，在执行之前，Ansible 总是将组变量（包括主机变量）展平到主机级别。
 
 如果主机是多个组的成员，Ansible 会从所有这些组中读取变量值，如果给不同组中的同一个变量分配不同的值，Ansible 会[根据内部规则选择使用哪个值进行合并](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#how-we-merge)。
+
+## 组织主机和组变量
+
+上面都是将主机或租变量存储在主机清单文件中，在实际使用 ansible 时 也允许单独将主机或组变量存储到外部文件以帮助更轻松地组织变量值。
+
+同时还可以在主机和组变量文件中使用列表和哈希数据，这是在主清单文件中无法做到的。
+
+主机和组变量文件使用 Yaml 语法。有效的文件扩展名包括 `.yml`、`.yaml`、`.json` 或无文件扩展名的文件。如果不熟悉 YAML，请[参阅 YAML 语法](https://curder.github.io/yaml-study/guide/rules.html)。
+
+Ansible 通过搜索相对于 inventory 主机清单文件或 playbook 剧本文件的路径来加载主机和组变量文件。如果主机清单文件 `/etc/ansible/hosts` 包含名为 `foosball` 的主机，该主机属于两个组 `raleigh` 和 `webservers`，则该主机将在以下位置使用 YAML 文件中的变量：
+
+```
+/etc/ansible/group_vars/raleigh # 可以选择'.yml', '.yaml', or '.json' 结尾
+/etc/ansible/group_vars/webservers
+/etc/ansible/host_vars/foosball
+```
+
+比如 `raleigh` 组的变量在 `/etc/ansible/group_vars/raleigh` 文件中的内容为：
+
+```yaml
+---
+ntp_server: acme.example.org
+database_server: storage.example.org
+```
+
+还可以创建以组或主机命名的目录。Ansible 将按字典顺序读取这些目录中的所有文件。`raleigh` 组更加精细的配置文件列表的示例：
+
+```yaml
+/etc/ansible/group_vars/raleigh/db_settings
+/etc/ansible/group_vars/raleigh/cluster_settings
+```
+
+`raleigh` 组中的所有主机都可以使用这些文件中定义的变量。
+
+同时也推荐将清单文件和变量保存在 git 等版本管理工具中是跟踪清单和主机变量更改的方式。
+
+
+
 
