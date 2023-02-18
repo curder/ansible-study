@@ -198,7 +198,7 @@ databases:
 
 可以通过从命令行提供多个清单参数或通过配置文件来同时定位多个主机清单源（目录、动态清单脚本或清单插件支持的文件），比如对生成和测试环境同时执行某项命令。
 
-```bashj
+```bash
 ansible all -i src/stage.yml -i src/prod.yml -m ping
 ```
 
