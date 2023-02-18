@@ -237,14 +237,15 @@ SSH连接的变量也可以作为宿主变量使用：
 
 ```ini
 [web]
-localhost ansible_connection=ssh ansible_host=localhost ansible_port=22 ansible_user=curder ansible_ssh_private_key_file=~/.ssh/id_rsa
+ubuntu ansible_connection=ssh ansible_host=ubuntu ansible_port=22 ansible_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa
+centos ansible_connection=ssh ansible_host=centos ansible_port=22 ansible_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa
 ```
 
 [更多 ansible 连接参数配置查看这里](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html?q=ansible_connection&check_keywords=yes&area=default#connecting-to-hosts-behavioral-inventory-parameters)
 
 #### 主机别名
 
-可以使用主机变量在清单中定义别名，比如下面的示例将主机定义一个别名 `jumper`
+可以使用主机变量在清单中定义别名，比如下面的示例将主机定义一个别名 **`jumper`**
 
 ::: code-group
 ```ini
@@ -262,9 +263,39 @@ ungrouped:
 
 ### 组变量
 
-如果一个组中的所有主机共享一个或多个变量值，可以使用 `:vars` 将该变量应用于整个组。
+如果一个组中的所有主机共享一个或多个变量值，`.ini` 的配置可以使用 `:vars`，`.yml` 的配置可以使用 `vars` 将该变量应用于整个组。
 
 
+::: code-group
+```ini {5-9}
+[web]
+centos ansible_host=centos
+ubuntu ansible_host=ubuntu
 
+[web:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_port=22
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+```
 
+```yaml {8-12}
+web:
+  hosts:
+    ubuntu:
+      ansible_host: ubuntu
+    centos:
+      ansible_host: centos
+
+  vars:
+     ansible_user: root
+     ansible_connection: ssh
+     ansible_port: 22
+     ansible_ssh_private_key_file: ~/.ssh/id_rsa
+```
+:::
+
+组变量是一次将变量应用于多个主机的便捷方式。然而，在执行之前，Ansible 总是将组变量（包括主机变量）展平到主机级别。
+
+如果主机是多个组的成员，Ansible 会从所有这些组中读取变量值，如果给不同组中的同一个变量分配不同的值，Ansible 会[根据内部规则选择使用哪个值进行合并](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#how-we-merge)。
 
