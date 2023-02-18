@@ -335,5 +335,80 @@ database_server: storage.example.org
 同时也推荐将清单文件和变量保存在 git 等版本管理工具中是跟踪清单和主机变量更改的方式。
 
 
+## 主机清单设置示例
+
+### 每个环境一个主机清单
+
+如果需要管理多个环境，有时最好只为每个主机清单定义一个环境的主机。这样当实际上想要更新一些开发服务器时，就很难意外更改生产环境中节点的状态。
 
 
+对于上面提到的示例，可以有一个 `inventory_test` 文件：
+
+```ini
+[dbservers]
+db01.test.example.com
+db02.test.example.com
+
+[appservers]
+app01.test.example.com
+app02.test.example.com
+app03.test.example.com
+```
+
+该文件仅包含属于“测试”环境的主机。在另一个名为的文件中定义“线上”机器 `inventory_prod`：
+
+```yaml
+[dbservers]
+db01.staging.example.com
+db02.staging.example.com
+
+[appservers]
+app01.staging.example.com
+app02.staging.example.com
+app03.staging.example.com
+```
+
+要将应用到测试环境中的所有 `appservers` 分组下的服务器时，可以使用以下命令：
+
+```bash
+ansible -i inventory_test -l appservers
+```
+
+### 按功能分组
+
+```yaml
+ungrouped:
+  hosts:
+    mail.example.com:
+
+web_servers:
+  hosts:
+    foo.example.com:
+    192.168.1.1:
+db_servers:
+  hosts:
+    one.example.com:
+    two.example.com:
+    ww[1:10].example.com:
+```
+
+按照服务器功能进行分组，将不同功能的服务器放置到对应组。
+
+### 按位置分组
+
+其他任务可能集中在某个主机所在的位置。假设 `db01.test.example.com` 和 `app01.test.example.com` 位于 `cn_shenzhen`，而 `db02.test.example.com` 位于 `cn_beijing`：
+
+```ini
+[cn_shenzhen]
+db01.test.example.com
+app01.test.example.com
+
+[cn_beijing]
+db02.test.example.com
+```
+
+实际上在使用时候可能会混合上面的所有主机组设置，因为可能需要在某一天更新特定数据中心的所有节点，而在另一天更新所有应用程序服务器，无论它们位于何处。
+
+```bash
+ansible -l cn_henzheng # 选择指定地区的节点
+```
