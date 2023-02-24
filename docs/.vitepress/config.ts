@@ -50,6 +50,7 @@ function sidebarInstall() {
             items: [
                 {text: "安装", link: "/guide/install"},
                 {text: "主机清单", link: "/guide/intro-inventory"},
+                {text: "认证方式", link: "/guide/verification-method"},
                 {text: "临时命令模式", link: "/guide/ad-hoc"},
             ]
         },
