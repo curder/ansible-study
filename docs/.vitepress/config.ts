@@ -42,16 +42,19 @@ function nav() {
 }
 
 function sidebarInstall() {
+    const prefix = "/guide";
+
     return [
         {
             text: "基础",
             // collapsible: true,
             // collapsed: false,
             items: [
-                {text: "安装", link: "/guide/install"},
-                {text: "主机清单", link: "/guide/intro-inventory"},
-                {text: "认证方式", link: "/guide/verification-method"},
-                {text: "临时命令模式", link: "/guide/ad-hoc"},
+                {text: "安装", link: prefix + "/install"},
+                {text: "主机清单", link: prefix + "/intro-inventory"},
+                {text: "认证方式", link: prefix + "/verification-method"},
+                {text: '命令颜色状态', link: prefix + "/command-color-types"},
+                {text: "临时命令模式", link: prefix + "/ad-hoc"},
             ]
         },
     ];
