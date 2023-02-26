@@ -5,5 +5,5 @@
 
 ```bash
 # 对主机清单 inventory.ini 中的所有主机执行 ping 命令
-ansible all -i ./inventory.ini -m ping
+ansible web -i ./inventory.ini -m ping
 ```
