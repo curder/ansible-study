@@ -4,8 +4,7 @@
 
 command 模块在临时命令模式中的默认模块，相当于默认添加了 `-m command` 参数。
 
-命令不能使用变量比如`$HOME`，同时不能使用特殊字符比如 `|` 或 `&`
-等字符，否则会出现无法识别，如果需要使用特殊字符可以考虑是用 `shell` 模块。
+命令不能使用变量比如`$HOME`，同时不能使用特殊字符比如 `|` 或 `&` 等字符，否则会出现无法识别，如果需要使用特殊字符可以考虑是用 `shell` 模块。
 
 ## 常用选项
 
@@ -29,7 +28,7 @@ command 模块在临时命令模式中的默认模块，相当于默认添加了
 - 查看被控服务器内存
 
     ```bash
-    ansible web -i ./inventory.ini -a "free -m" 
+    ansible web -i ./inventory.ini -a "free -m"
     ```
 
 - 被控服务器创建文件
@@ -77,7 +76,7 @@ command 模块在临时命令模式中的默认模块，相当于默认添加了
   # 1. 执行下面的命令会抛出 /backup 目录不存在的错误
   ansible web -i inventory.ini \
               -a "tar zcf /backup/log.tar.gz var/log chdir=/"
-              
+
   # 2. 使用 removes 参数，保证目录存在时才执行命令
   ansible web -i inventory.ini \
               -a "tar zcf /backup/log.tar.gz var/log chdir=/ removes=/backup"
