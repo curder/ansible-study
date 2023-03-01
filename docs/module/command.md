@@ -50,13 +50,13 @@ command 模块在临时命令模式中的默认模块，相当于默认添加了
     ansible web -i ./inventory.ini -a "uptime"
     ```
 
-- 创建 test 用户
+- 创建 `test` 用户
 
     ```bash
     ansible web -i ./inventory.ini -a "useradd test"
     ```
 
-- 删除 test 用户
+- 删除 `test` 用户
     ```bash
     ansible web -i ./inventory.ini -a "userdel -r test"
     ```
