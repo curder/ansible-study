@@ -6,5 +6,6 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 
 ## 常用模块列表
 
-- [ping](ping.md)
-- [command](command.md)
+- [ping 模块](ping.md)
+- [command 模块](command.md)
+- [shell 模块](shell.md)

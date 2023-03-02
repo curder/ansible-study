@@ -69,6 +69,7 @@ function sidebarModule(prefix='/module') {
             items: [
                 {text: "ping 模块", link: `${prefix}/ping`},
                 {text: "command 模块", link: `${prefix}/command`},
+                {text: "shell 模块", link: `${prefix}/shell`},
             ],
         }
     ];
