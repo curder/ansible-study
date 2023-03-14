@@ -10,6 +10,6 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.46"
+    "vitepress": "^1.0.0-alpha.56"
   }
 }
