@@ -6,7 +6,7 @@ command 模块在临时命令模式中的默认模块，相当于默认添加了
 
 命令不能使用变量比如`$HOME`，同时不能使用特殊字符比如 `|` 或 `&` 等字符，否则会出现无法识别，如果需要使用特殊字符可以考虑是用 `shell` 模块。
 
-## 常用选项
+## 常用参数
 
 | 选项参数    | 选项说明                              |
 |---------|-----------------------------------|
@@ -14,7 +14,7 @@ command 模块在临时命令模式中的默认模块，相当于默认添加了
 | creates | 定义一个文件是否存在，如果不存在则运行相应命令，存在则跳过执行   |
 | removes | 定义一个文件是否存在，如果存在则运行相应命令，如果不存在则跳过执行 |
 
-更多选项可以[查看这里](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html#parameters)。
+更多参数可以使用命令 `ansible-doc -s command` 获取更多使用相关的文档或者[查看官方文档](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html#parameters)。
 
 ## 一些实例
 
