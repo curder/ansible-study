@@ -65,12 +65,13 @@ function sidebarInstall(prefix="/guide") {
 function sidebarModule(prefix='/module') {
     return [
         {
-            text: "常用模块",
+            text: "",
             items: [
                 {text: "ping 模块", link: `${prefix}/ping`},
                 {text: "command 模块", link: `${prefix}/command`},
                 {text: "shell 模块", link: `${prefix}/shell`},
                 {text: "copy 模块", link: `${prefix}/copy`},
+                {text: "file 模块", link: `${prefix}/file`},
             ],
         }
     ];
