@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,N as e}from"./chunks/framework.bf75d690.js";const h=JSON.parse('{"title":"ping 模块","description":"","frontmatter":{},"headers":[],"relativePath":"module/ping.md","lastUpdated":1677425951000}'),o={name:"module/ping.md"},l=e("",3),t=[l];function p(i,c,r,d,_,g){return a(),n("div",null,t)}const m=s(o,[["render",p]]);export{h as __pageData,m as default};

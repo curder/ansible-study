@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as l,N as n}from"./chunks/framework.bf75d690.js";const h=JSON.parse('{"title":"shell 模块","description":"","frontmatter":{},"headers":[],"relativePath":"module/shell.md","lastUpdated":1678780540000}'),o={name:"module/shell.md"},p=n("",5),e=[p];function t(c,r,C,y,i,D){return l(),a("div",null,e)}const d=s(o,[["render",t]]);export{h as __pageData,d as default};
