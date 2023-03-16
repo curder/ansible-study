@@ -15,3 +15,4 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 | [file 模块](file.md) | 管理文件和文件属性 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html) |
 | [script 模块](script.md) | 在远程节点上运行本地脚本 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/script_module.html) |
 | [cron 定时任务模块](cron.md) | 管理 cron.d 和 crontab 条目 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/cron_module.html) |
+| [group 定时任务模块](group.md) | 添加或删除用户组 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html) |
