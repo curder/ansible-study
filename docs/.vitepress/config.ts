@@ -72,6 +72,7 @@ function sidebarModule(prefix='/module') {
                 {text: "shell 模块", link: `${prefix}/shell`},
                 {text: "copy 模块", link: `${prefix}/copy`},
                 {text: "file 模块", link: `${prefix}/file`},
+                {text: "script 模块", link: `${prefix}/script`},
             ],
         }
     ];
