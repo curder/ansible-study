@@ -75,6 +75,7 @@ function sidebarModule(prefix='/module') {
                 {text: "script 模块", link: `${prefix}/script`},
                 {text: "cron 定时任务", link: `${prefix}/cron`},
                 {text: "group 模块", link: `${prefix}/group`},
+                {text: "user 模块", link: `${prefix}/user`},
             ],
         }
     ];
