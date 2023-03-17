@@ -17,3 +17,4 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 | [cron 定时任务模块](cron.md) | 管理 cron.d 和 crontab 条目 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/cron_module.html) |
 | [group 模块](group.md) | 添加或删除用户组 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html) |
 | [user 用户模块](user.md) | 管理用户帐户 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html) |
+| [yum 模块](yum.md) | 使用 yum 包管理器管理包 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/yum_module.html) |

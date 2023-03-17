@@ -76,6 +76,7 @@ function sidebarModule(prefix='/module') {
                 {text: "cron 定时任务", link: `${prefix}/cron`},
                 {text: "group 模块", link: `${prefix}/group`},
                 {text: "user 模块", link: `${prefix}/user`},
+                {text: "yum 模块", link: `${prefix}/yum`},
             ],
         }
     ];
