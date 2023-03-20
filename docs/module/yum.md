@@ -12,7 +12,7 @@
 | `disablerepo` | —                                                                                 | —      | 禁用指定存储库，如果有多个存储库，使用英文逗号分隔  |
 
 
-更多参数可以使用命令 `ansible-doc -s yum` 获取更多使用相关的文档或者[查看官方文档](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/yum_module.html)。
+更多参数可以使用命令 `ansible-doc -s yum` 获取更多使用相关的文档或者[查看官方文档](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/yum_module.html#parameters)。
 
 
 ## 一些示例
