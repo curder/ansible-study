@@ -13,7 +13,9 @@
 
 更多参数可以使用命令 `ansible-doc -s systemd` 获取更多使用相关的文档或者[查看官方文档](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/systemd_module.html#parameters)。
 
-## 启动服务
+## 示例
+
+### 启动服务
 
 使用 systemd 模块的 `name` 和 `state=started` 参数。
 
@@ -21,7 +23,7 @@
 ansible all -i src/inventory.yml -m systemd -a "name=nginx state=started"
 ```
 
-## 停止服务
+### 停止服务
 
 使用 systemd 模块的 `name` 和 `state=stopped` 参数。
 
@@ -29,7 +31,7 @@ ansible all -i src/inventory.yml -m systemd -a "name=nginx state=started"
 ansible all -i src/inventory.yml -m systemd -a "name=nginx state=stopped"
 ```
 
-## 重启服务
+### 重启服务
 
 使用 systemd 模块的 `name` 、`state=stopped` 和 `daemon_reload=true` 参数。
 
@@ -37,7 +39,7 @@ ansible all -i src/inventory.yml -m systemd -a "name=nginx state=stopped"
 ansible all -i src/inventory.yml -m systemd -a "name=crond state=started daemon_reload=true"
 ```
 
-## 重载服务
+### 重载服务
 
 使用 systemd 模块的 `name` 和 `state=reloaded` 参数。
 
@@ -45,7 +47,7 @@ ansible all -i src/inventory.yml -m systemd -a "name=crond state=started daemon_
 ansible all -i src/inventory.yml -m systemd -a "name=nginx state=reloaded"
 ```
 
-## 开机自启动
+### 开机自启动
 
 使用 systemd 模块的 `name`、`state=started` 和 `enabled=true` 参数。
 
