@@ -77,6 +77,7 @@ function sidebarModule(prefix='/module') {
                 {text: "group 模块", link: `${prefix}/group`},
                 {text: "user 模块", link: `${prefix}/user`},
                 {text: "yum 模块", link: `${prefix}/yum`},
+                {text: "apt 模块", link: `${prefix}/apt`},
                 {text: "systemd 模块", link: `${prefix}/systemd`},
                 {text: "service 模块", link: `${prefix}/service`},
             ],
