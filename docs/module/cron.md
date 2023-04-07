@@ -1,4 +1,4 @@
-# cron 定时任务模块
+# cron 模块
 
 [cron 模块](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/cron_module.html) 用于管理 cron.d 和 crontab 条目。
 
