@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,N as l}from"./chunks/framework.3e506893.js";const A=JSON.parse('{"title":"copy 模块","description":"","frontmatter":{},"headers":[],"relativePath":"module/copy.md","lastUpdated":1678790476000}'),o={name:"module/copy.md"},t=l("",18),p=[t];function e(c,r,y,C,d,D){return n(),a("div",null,p)}const h=s(o,[["render",e]]);export{A as __pageData,h as default};
