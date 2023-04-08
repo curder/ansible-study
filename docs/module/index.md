@@ -19,5 +19,6 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 | [user 用户模块](user.md)     | 管理用户帐户                            | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html)    |
 | [yum 模块](yum.md)         | 使用 yum 包管理器管理包                    | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/yum_module.html)     |
 | [apt 模块](apt.md)         | 在 Debian/Ubuntu 机器上使用 apt 包管理器管理包 | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html)     |
+| [package 模块](package.md) | 通用操作系统包管理器                        | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html) |
 | [systemd 模块](systemd.md) | 系统服务管理                            | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/systemd_module.html) |
 | [service 模块](service.md) | 管理服务                              | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html) |
