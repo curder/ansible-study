@@ -73,6 +73,7 @@ function sidebarModule(prefix='/module') {
                 {text: "copy 模块", link: `${prefix}/copy`},
                 {text: "file 模块", link: `${prefix}/file`},
                 {text: "fetch 模块", link: `${prefix}/fetch`},
+                {text: "unarchive 模块", link: `${prefix}/unarchive`},
                 {text: "script 模块", link: `${prefix}/script`},
                 {text: "cron 模块", link: `${prefix}/cron`},
                 {text: "group 模块", link: `${prefix}/group`},
