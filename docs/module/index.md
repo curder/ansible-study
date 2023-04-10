@@ -11,6 +11,7 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 | [ping](ping.md)           | 检测目标机器是否存活                      | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ping_module.html)      |
 | [command](command.md)     | 执行简单命令，不支持特殊符号比如管道符             | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html)   |
 | [shell](shell.md)         | 执行简单命令，支持特殊符号                   | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html)     |
+| [hostname](hostname.md)   | 执行简单命令，支持特殊符号                   | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/hostname_module.html)  |
 | [copy](copy.md)           | 批量分发文件                          | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)      |
 | [file](file.md)           | 管理文件和文件属性                       | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)      |
 | [fetch](fetch.md)         | 从远程节点获取文件                       | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fetch_module.html)     |
