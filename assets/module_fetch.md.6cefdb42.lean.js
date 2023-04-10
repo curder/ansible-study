@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,N as o}from"./chunks/framework.3e506893.js";const b=JSON.parse('{"title":"fetch 模块","description":"","frontmatter":{},"headers":[],"relativePath":"module/fetch.md","lastUpdated":1681103740000}'),s={name:"module/fetch.md"},c=o("",9),l=[c];function n(r,d,p,h,i,f){return a(),t("div",null,l)}const m=e(s,[["render",n]]);export{b as __pageData,m as default};
