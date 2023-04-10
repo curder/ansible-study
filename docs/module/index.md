@@ -15,6 +15,7 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 | [file](file.md)           | 管理文件和文件属性                       | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)      |
 | [fetch](fetch.md)         | 从远程节点获取文件                       | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fetch_module.html)     |
 | [unarchive](unarchive.md) | 从本机复制存档后在远程节点解压缩存档              | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/unarchive_module.html) |
+| [archive](archive.md)     | 从本机复制存档后在远程节点解压缩存档              | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/community/general/archive_module.html) |
 | [script](script.md)       | 在远程节点上运行本地脚本                    | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/script_module.html)    |
 | [cron](cron.md)           | 管理 cron.d 和 crontab 条目          | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/cron_module.html)      |
 | [group](group.md)         | 添加或删除用户组                        | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html)     |
