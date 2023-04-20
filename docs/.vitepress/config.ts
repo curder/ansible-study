@@ -86,6 +86,7 @@ function sidebarModule(prefix='/module') {
                 {text: "systemd 模块", link: `${prefix}/systemd`},
                 {text: "service 模块", link: `${prefix}/service`},
                 {text: "lineinfile 模块", link: `${prefix}/lineinfile`},
+                {text: "replace 模块", link: `${prefix}/replace`},
             ],
         }
     ];

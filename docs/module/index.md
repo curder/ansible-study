@@ -27,3 +27,4 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 | [systemd](systemd.md)       | 系统服务管理                          | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/systemd_module.html)    |
 | [service](service.md)       | 管理服务                            | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html)    |
 | [lineinfile](lineinfile.md) | 管理文本文件中的行                       | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/lineinfile_module.html) |
+| [replace](replace.md)       | 使用向后引用的正则替换文件中特定字符串的所有实例        | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/replace_module.html)    |
