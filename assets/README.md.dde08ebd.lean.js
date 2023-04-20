@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as l,N as i}from"./chunks/framework.3e506893.js";const u=JSON.parse('{"title":"Ansible 学习","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","lastUpdated":1676695959000}'),t={name:"README.md"},n=i("",14),r=[n];function s(o,b,h,p,c,_){return l(),a("div",null,r)}const f=e(t,[["render",s]]);export{u as __pageData,f as default};

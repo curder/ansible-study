@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,O as l}from"./chunks/framework.e51d172d.js";const A=JSON.parse('{"title":"yum 模块","description":"","frontmatter":{},"headers":[],"relativePath":"module/yum.md","lastUpdated":1679311632000}'),o={name:"module/yum.md"},e=l("",15),t=[e];function p(c,r,y,C,d,D){return n(),a("div",null,t)}const m=s(o,[["render",p]]);export{A as __pageData,m as default};
