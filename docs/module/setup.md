@@ -5,7 +5,7 @@
 
 ## 常用参数
 
-filter参数：用于进行条件过滤。如果设置，仅返回匹配过滤条件的信息。
+**`filter`** 参数：用于进行条件过滤。如果设置则仅返回匹配过滤条件的信息。
 
   - `ansible_all_ipv4_addresses` 仅显示ipv4的信息
   - `ansible_devices` 仅显示磁盘设备信息
