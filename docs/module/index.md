@@ -28,3 +28,4 @@ ansible 中有许许多多的模块，通过不同的模块之间的配合来完
 | [service](service.md)       | 管理服务                            | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html)    |
 | [lineinfile](lineinfile.md) | 管理文本文件中的行                       | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/lineinfile_module.html) |
 | [replace](replace.md)       | 使用向后引用的正则替换文件中特定字符串的所有实例        | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/replace_module.html)    |
+| [setup](setup.md)           | 收集有关远程主机的信息                     | [官方文档地址](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html)      |
