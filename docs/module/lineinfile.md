@@ -51,7 +51,7 @@ ansible all -i src/inventory.yml -m lineinfile -a "path=/etc/sudoers regexp='^%w
 
 假如有 `/etc/httpd.conf` 文件内容如下：
 
-```text
+```txt
 Listen 127.0.0.1:80
 Listen 80
 Port
@@ -78,7 +78,7 @@ ansible all -i src/inventory.yml -m lineinfile -a "path=/etc/httpd.conf insertaf
 
 假如服务器上 `/etc/hosts` 文件内容如下：
 
-```text
+```txt
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 ```
@@ -93,7 +93,7 @@ ansible all -i src/inventory.yml -m lineinfile -a "path=/etc/hosts regexp='^127\
 
 假如服务器上 `/etc/hosts` 文件内容如下：
 
-```text
+```txt
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 ```
@@ -109,7 +109,7 @@ ansible all -i src/inventory.yml -m lineinfile -a "path=/etc/hosts regexp='^::1'
 
 示例原文件 `/tmp/test.txt` 内容如下：
 
-```text
+```txt
 # %wheel   ALL=(ALL)   ALL
 ```
 
@@ -121,7 +121,7 @@ ansible all -i src/inventory.yml -m lineinfile -a "path=/tmp/test.txt regexp='^%
 
 执行完上面的命令后，得到修改后的文件是：
 
-```text
+```txt
 # %wheel  ALL=(ALL)       NOPASSWD: ALL
 %wheel  ALL=(ALL)       NOPASSWD: ALL
 ```
