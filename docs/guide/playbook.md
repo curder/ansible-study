@@ -386,3 +386,58 @@ var2: nginx
        yum: name=mariadb-server
        when: ansible_distribution_major_version == "7"
 ```
+
+## 使用 with_items 迭代
+
+当有需要重复性执行任务时，可以使用迭代机制。 
+
+**字符串**
+
+```yaml
+---
+- hosts: web_servers
+  remote_user: root
+  gather_facts: false
+  
+  tasks:
+     - name: add some users
+       user: name={{ item }} state=present groups=wheel
+       with_items:
+          - devops
+          - www
+# 上面的语法功能相当于
+#  tasks:
+#     - name: add some users devops
+#       user: name=devops state=present groups=wheel
+#     - name: add some users www
+#       user: name=www state=present groups=wheel
+```
+
+
+**字典**
+
+```yaml
+---
+- hosts: web_servers
+  remote_user: root
+  gather_facts: false
+
+  tasks:
+    - name: add some groups
+      group:
+        name={{ item }}
+        state=present
+      with_items:
+        - mysql
+        - nginx
+    - name: add some users
+      user:
+        name={{ item.name }}
+        group={{ item.group }}
+        state=present
+      with_items:
+        - name: mysql
+          group: mysql
+        - name: nginx
+          group: nginx
+```
