@@ -364,4 +364,25 @@ var2: nginx
 
 ### 主机清单文件中定义变量
 
-在主机清单文件中定义变量[可以参考这里](./intro-inventory.md#变量)。
+在主机清单文件中定义变量[可以参考这里](intro-inventory.md#变量)。
+
+
+## 使用 when
+
+在剧本中可以使用 `when` 对任务进行条件判断，如果满足条件则执行，否则则不执行。
+
+```yaml
+---
+- hosts: web_servers
+  remote_user: root
+  gather_facts: false
+
+  tasks:
+     - name: install mysql
+       yum: name=mysql-server
+       when: ansible_distribution_major_version == "6"
+     
+     - name: install mariadb
+       yum: name=mariadb-server
+       when: ansible_distribution_major_version == "7"
+```
