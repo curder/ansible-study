@@ -249,3 +249,119 @@ http {
 ```
 
 则可以通过使用 `-t` 参数指定对应标签的任务，比如：`ansible-playbook -t config install-nginx.yml`。
+
+
+## 使用变量
+
+变量名命名要求：仅能由字母、数字和下划线组成，且只能由字母开头
+
+**变量定义：**
+
+```
+variable=value
+
+# 比如：
+http_port=80
+```
+
+**变量调用：**
+
+通过 `{{ variable_name }}` 调用变量，且建议变量名前后添加空格。
+
+**变量来源：**
+
+1. setup 模块的 facts 远程主机的所有变量都可以直接调用
+2. 通过命令行指定变量，优先级高
+    ```bash
+    ansible-playbook -e variable=value
+    ```
+   > 使用 `-e` 参数指定变量
+3. 在 playbook 中定义
+    ```yaml
+    vars:
+      - var1: value1
+      - var2: value2
+    ```
+4. 独立的 yml 变量文件中定义
+
+### 使用setup中的变量
+
+```yaml
+---
+- hosts: all
+  remote_user: root
+  gather_facts: true
+
+  tasks:
+    - name: create empty file
+      file: path=/tmp/{{ ansible_nodename }}.log state=touch owner=root mode=0600
+```
+
+### 命令行中定义变量
+
+```yaml
+# var.yml
+- hosts: web_servers
+  remote_user: root
+  gather_facts: false
+
+  tasks:
+     - name: install package
+       yum: name={{ package_name }} state=present
+```
+
+```bash
+ansible-playbook -e package_name=nginx var.yml
+```
+
+### playbook 文件中定义变量
+
+```yaml
+# var.yml
+---
+- hosts: web_servers
+  remote_user: root
+  gather_facts: false
+  vars:
+     - user_name: user1
+     - group_name: group1
+
+  tasks:
+     - name: create group
+       group: name={{ group_name }} state=present
+     - name: create user
+       user: name={{ user_name }} group={{ group_name }} state=present
+```
+
+```bash
+ansible-playbook -e "user_name=curder" var.yml
+```
+
+### 单独 yml 文件中定义变量
+
+::: code-group
+```yaml [webserver-log.yml]
+---
+- hosts: all
+  remote_user: root
+  gather_facts: false
+  vars_files:
+     - vars.yml
+  
+  tasks:
+    - name: create httpd log
+      file: name=/tmp/{{ var1 }}.log state=touch
+    - name: create nginx log
+      file: name=/tmp/{{ var2 }}.log state=touch
+```
+
+```yaml [vars.yml]
+---
+var1: httpd
+var2: nginx
+```
+:::
+
+### 主机清单文件中定义变量
+
+在主机清单文件中定义变量[可以参考这里](./intro-inventory.md#变量)。
