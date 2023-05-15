@@ -56,6 +56,7 @@ function sidebarInstall(prefix="/guide") {
                 {text: "认证方式", link: `${prefix}/verification-method`},
                 {text: '命令颜色状态', link: `${prefix}/command-color-types`},
                 {text: "临时命令模式", link: `${prefix}/ad-hoc`},
+                {text: "playbook 剧本", link: `${prefix}/playbook`},
             ]
         },
     ];
