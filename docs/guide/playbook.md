@@ -216,3 +216,36 @@ http {
 }
 ```
 :::
+
+
+## tags 组件
+
+在剧本文件中，可以利用 tags 组件，为特定任务指定标签，当在执行剧本时，可以只执行特定 tags 的
+任务,而非整个playbook文件。
+
+```yaml {16}
+---
+- hosts: web_servers
+  remote_user: root
+  gather_facts: false
+
+  tasks:
+    - name: add nginx group
+      group: name=nginx state=present
+    - name: add nginx user
+      user: name=nginx state=present group=nginx
+    - name: install nginx
+      yum: name=nginx state=present
+    - name: add custom config
+      copy: src=conf/nginx.conf dist=/etc/nginx/nginx.conf
+      notify: restart nginx
+      tags: config  // [!code focus]
+    - name: start nginx
+      service: name=nginx state=started enabled=yes
+
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
+```
+
+则可以通过使用 `-t` 参数指定对应标签的任务，比如：`ansible-playbook -t config install-nginx.yml`。
