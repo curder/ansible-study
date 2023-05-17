@@ -57,6 +57,7 @@ function sidebarInstall(prefix="/guide") {
                 {text: '命令颜色状态', link: `${prefix}/command-color-types`},
                 {text: "临时命令模式", link: `${prefix}/ad-hoc`},
                 {text: "playbook 剧本", link: `${prefix}/playbook`},
+                {text: "roles 角色", link: `${prefix}/roles`},
             ]
         },
     ];
